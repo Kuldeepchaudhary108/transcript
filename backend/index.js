@@ -2,7 +2,8 @@ import OpenAI from "openai";
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import { processTranscript } from "./controller/Transcript";
+import { processTranscript } from "./controller/Transcript.js";
+
 
 dotenv.config(); // loads .env file
 

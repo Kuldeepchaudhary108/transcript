@@ -10,7 +10,7 @@ const client = new OpenAI({
 const processTranscript = async (req, res) => {
   const { transcript } = req.body;
 
-  if (!transcript.trim()) {
+  if (!transcript) {
     return {
       clean_transcript: "",
       summary: ["No summary available."],
@@ -43,7 +43,7 @@ const processTranscript = async (req, res) => {
 
     // Parse the response
     const parsedResponse = JSON.parse(response.choices[0].message.content);
-
+    console.log("res ",response);
     // Send the parsed response back
     return res.status(200).json(parsedResponse);
   } catch (err) {
